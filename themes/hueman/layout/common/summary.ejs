@@ -1,8 +1,6 @@
 <article class="article article-summary">
     <div class="article-summary-inner">
-        <% if (theme.customize.thumbnail === true) { %>
-        <%- partial('common/thumbnail', { counter: true }) %>
-        <% } %>
+        <%- excerpt(post) %>
         <div class="article-meta">
             <p class="category">
             <%- list_categories(post.categories, {
@@ -16,8 +14,5 @@
             <p class="date"><time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date) %></time></p>
         </div>
         <%- partial('post/title', { class_name: 'article-title', linkable: true }) %>
-        <p class="article-excerpt">
-            <%- excerpt(post) %>
-        </p>
     </div>
 </article>
