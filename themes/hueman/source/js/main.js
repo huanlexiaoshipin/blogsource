@@ -1,4 +1,17 @@
 (function ($) {
+	// 点击视频事件
+	$('video').click(function(){
+		$('video').each(function(){
+			this.pause();
+		});
+		if(!this.isPlay){
+			this.play();
+			this.isPlay = true
+		} else {
+			this.pause();
+			this.isPlay = false;
+		}
+	});
     // To top button
     $("#back-to-top").on('click', function () {
         $('body, html').animate({ scrollTop: 0 }, 600);
